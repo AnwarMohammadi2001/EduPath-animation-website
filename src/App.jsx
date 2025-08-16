@@ -14,9 +14,10 @@ const App = () => {
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
   return (
-    <div className="dark:bg-black  relative">
+    <div className="dark:bg-black  bg-gray-100 relative">
       <Toaster />
       <Navbar theme={theme} setTheme={setTheme} />
+      <Hero />
     </div>
   );
 };
