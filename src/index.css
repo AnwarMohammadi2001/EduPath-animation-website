@@ -14,3 +14,12 @@
   font-family: "Manrope", sans-serif;
   font-weight: 500;
 }
+
+/* custome style for paganition on  */
+.custom-pagination .swiper-pagination-bullet {
+  @apply w-4 h-1.5 bg-gray-500 rounded-full transition-all  duration-300;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  @apply w-6 h-1.5 bg-[#02DB81] scale-110;
+}

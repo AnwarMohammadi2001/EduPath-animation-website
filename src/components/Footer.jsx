@@ -1,55 +1,116 @@
-import React from "react";
-import assets from "../assets/assets";
+import { useEffect, useState } from "react";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
+import { FaMapMarkerAlt, FaRegCalendarAlt } from "react-icons/fa";
+const Footer = () => {
+  const [location, setLocation] = useState("Fetching location...");
+  const today = new Date();
+  const formattedDate = today.toLocaleDateString("en-US", {
+    weekday: "short",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
 
-const Footer = ({ theme, setTheme }) => {
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          // You can use a reverse geocoding API to get the city name
+          setLocation(
+            `Lat: ${latitude.toFixed(2)}, Lon: ${longitude.toFixed(2)}`
+          );
+        },
+        (error) => {
+          console.error(error);
+          setLocation("Location not available");
+        }
+      );
+    } else {
+      setLocation("Geolocation not supported");
+    }
+  }, []);
   return (
-    <div className="bg-slate-50 dark:bg-gray-900 pt-10 sm:pt-10 mt-20 sm:mt-40 px-4 sm:px-10 lg:px-24 xl:px-40">
-      <div className="flex justify-between lg:items-center max-lg:flex-col gap-10">
-        <div className="space-y-5 text-sm text-gray-700 dark:text-gray-400">
-          <img
-            src={theme === "dark" ? assets.logo_dark : assets.logo}
-            alt="Logo"
-            className="w-32 sm:w-40"
-          />
-          <p className="max-w-md">
-            From starategy to execute , we craft digital solutions that move
-            your business forward.
+    <footer className="bg-white text-gray-600 pt-12 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+        {/* About Section */}
+        <div>
+          <h3 className="text-xl font-bold mb-4">EduPath</h3>
+          <p className="text-gray-600">
+            Bringing creativity and quality together. We provide amazing
+            services and support for your business.
           </p>
-          <ul>
+        </div>
+
+        {/* Quick Links */}
+        <div>
+          <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+          <ul className="space-y-2 ">
             <li>
-              <a href="#hero" className="hover:text-primary">
+              <a href="#home" className="hover:text-white transition">
                 Home
               </a>
             </li>
             <li>
-              <a href="#services" className="hover:text-primary">
+              <a href="#services" className="hover:text-white transition">
                 Services
               </a>
             </li>
             <li>
-              <a href="#our-work" className="hover:text-primary">
-                Our Work
+              <a href="#about" className="hover:text-white transition">
+                About
               </a>
             </li>
-            <li>
-              <a href="#contact-us" className="hover:text-primary">
-                Contact us
-              </a>
-            </li>
+           
           </ul>
         </div>
-        <div className="text-gray-600 dark:text-gray-400">
-          <h3 className="font-semibold ">Subscribe to our newsletter</h3>
-          <p className="text-sm mt-2 mb-6">
-            The latest news, articls, and resources sent to your inbox weekly
-          </p>
-          <div className="flex gap-2 text-sm">
-            <input type="email"placeholder="Enter your email" className="w-full p-3 text-sm outline-none rounded dark:text-gray-200 bg-transparent border border-gray-300 dark:border-gray-500" />
-            <button className="bg-primary text-white rounded px-6">Subscribe</button>
+
+        {/* Contact & Social */}
+        <div>
+          <h3 className="text-xl font-bold mb-4">Contact</h3>
+          <p>Email: info@tamadon.com</p>
+          <p>Phone: +93 772 387 935</p>
+
+          <div className="flex gap-4 mt-4">
+            <a href="#" className="hover:text-white transition">
+              <FaFacebookF />
+            </a>
+            <a href="#" className="hover:text-white transition">
+              <FaTwitter />
+            </a>
+            <a href="#" className="hover:text-white transition">
+              <FaInstagram />
+            </a>
+            <a href="#" className="hover:text-white transition">
+              <FaLinkedinIn />
+            </a>
           </div>
         </div>
       </div>
-    </div>
+
+      <div className="mt-5 text-center text-gray-500 border-t border-gray-800 flex justify-between items-center py-6">
+        <p>
+          &copy; {new Date().getFullYear()} EduPath. Made it with{" "}
+          <span className="text-red-500">❤️</span> and lots of coffee.
+        </p>
+
+        <div className="text-center text-gray-500 flex flex-col md:flex-row items-center justify-center gap-4">
+          <span className="flex items-center gap-1">
+            <FaRegCalendarAlt className="text-red-500" />
+            {formattedDate}
+          </span>
+          <span className="flex items-center gap-1">
+            <FaMapMarkerAlt className="text-red-500" />
+            {location}
+          </span>
+        </div>
+      </div>
+    </footer>
   );
 };
 
