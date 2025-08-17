@@ -8,6 +8,7 @@ import Team from "./components/Team";
 import ContactUs from "./components/ContactUs";
 import { Toaster } from "react-hot-toast";
 import Footer from "./components/Footer";
+import EducationCategories from "./components/categories/EducationCategories";
 
 const App = () => {
   const [theme, setTheme] = useState(
@@ -18,6 +19,7 @@ const App = () => {
       <Toaster />
       <Navbar theme={theme} setTheme={setTheme} />
       <Hero />
+      <EducationCategories />
     </div>
   );
 };
