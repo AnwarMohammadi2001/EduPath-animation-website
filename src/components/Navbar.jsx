@@ -38,19 +38,20 @@ const Navbar = ({ theme, setTheme }) => {
           >
             New Positions
           </a>
+
           <a
-            href="#services"
+            href="#category"
+            onClick={() => setSidebarOpen(false)}
+            className="sm:hover:border-b"
+          >
+            Category
+          </a>
+          <a
+            href="#skill"
             onClick={() => setSidebarOpen(false)}
             className="sm:hover:border-b"
           >
             Skills
-          </a>
-          <a
-            href="#pur-work"
-            onClick={() => setSidebarOpen(false)}
-            className="sm:hover:border-b"
-          >
-            Our Works
           </a>
           <a
             href="#contact-us"
