@@ -6,7 +6,7 @@ const Navbar = ({ theme, setTheme }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="flex justify-between items-center sm:px-12 md:px-24 xl:px-10 py-4 sticky top-0 z-50 backdrop-blur-xl bg-white/50 font-medium px-4 dark:bg-gray-900/70">
+    <div className="flex justify-between items-center sm:px-12 md:px-24 xl:px-10 py-4    font-medium px-4 ">
       <div className="flex items-center gap-x-24">
         {/* Logo */}
         <p className="text-2xl font-extrabold font-Manrope">EduPath.</p>
@@ -75,12 +75,12 @@ const Navbar = ({ theme, setTheme }) => {
 
         {/* Contact button */}
         <ThemeToggleBtn theme={theme} setTheme={setTheme} />
-        <p className="font-semibold cursor-pointer hover:underline dark:text-white">
+        <p className="font-semibold cursor-pointer hover:underline text-black dark:text-white">
           login
         </p>
         <a
           href="#contact-us"
-          className="text-sm max-sm:hidden flex items-center bg-black dark:bg-white dark:text-black gap-2 text-white px-6 py-2 rounded-full cursor-pointer hover:scale-103 transition-all"
+          className="text-sm max-sm:hidden flex items-center bg-primary dark:bg-white dark:text-black gap-2 text-white px-6 py-2 rounded-full cursor-pointer hover:scale-103 transition-all"
         >
           Free Trail
         </a>

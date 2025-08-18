@@ -195,7 +195,7 @@ export default function EducationCategories() {
   };
 
   return (
-    <div id="category" className="py-20 min-h-screen bg-red-50 px-12">
+    <div id="category" className="py-20 min-h-screen px-12">
       {/* Category Buttons */}
       <div className="text-center">
         <h2 className="text-lg sm:text-2xl lg:text-4xl tracking-normal text-gray-700">

@@ -28,7 +28,7 @@ const softSkills = [
 
 const Skill = () => {
   return (
-    <div className="min-h-screen px-12  bg-red-50 relative ">
+    <div className="min-h-screen px-12  relative ">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <h3 className="text-xl md:text-3xl lg:text-5xl max-w-md ">
           Get the skills you need for a job that is in demand

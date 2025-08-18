@@ -73,7 +73,7 @@ const Testimonials = () => {
 
   return (
     <div
-      className="bg-red-50 dark:bg-zinc-900 transition-colors duration-500 relative py-14 px-8 md:px-12"
+      className=" dark:bg-zinc-900 transition-colors duration-500 relative py-14 px-8 md:px-12"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
