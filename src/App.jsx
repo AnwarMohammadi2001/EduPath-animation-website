@@ -16,6 +16,7 @@ const App = () => {
       <Toaster />
       <Navbar theme={theme} setTheme={setTheme} />
       <Hero />
+
       <EducationCategories />
       <Skill />
       <Testimonials />
