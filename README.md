@@ -1,1 +1,2 @@
 
+![Demo Image](hero.png)

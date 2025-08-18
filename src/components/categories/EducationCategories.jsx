@@ -210,19 +210,19 @@ export default function EducationCategories() {
             className={`relative px-2 py-1.5 transition duration-300 group cursor-pointer
             ${
               selectedCategory === cat
-                ? "text-black font-bold font-Manrope"
-                : "text-gray-700 hover:text-black"
+                ? "text-white bg-primary/70 rounded-full  px-4 font-bold font-Manrope"
+                : "text-gray-700 hover:text-white hover:bg-primary/70 rounded-full px-4"
             }`}
           >
             {cat}
-            <span
+            {/* <span
               className={`absolute h-[2px] left-0 w-full -bottom-0.5 transform scale-x-0 bg-black hover:bg-gray-700 transition-transform duration-500 origin-center 
               ${
                 selectedCategory === cat
                   ? "scale-x-100"
                   : "group-hover:scale-x-100"
               }`}
-            ></span>
+            ></span> */}
           </button>
         ))}
       </div>
@@ -240,7 +240,7 @@ export default function EducationCategories() {
           <div className="flex justify-center mt-8">
             <button
               onClick={() => setVisibleCount((prev) => prev + 4)}
-              className="px-6 py-2 rounded-full cursor-pointer bg-black text-white font-medium hover:bg-gray-800 transition"
+              className="px-6 py-2 rounded-full cursor-pointer bg-primary text-white font-medium transition"
             >
               Show More
             </button>

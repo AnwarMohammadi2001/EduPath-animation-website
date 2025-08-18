@@ -6,21 +6,21 @@ const softSkills = [
   {
     id: 1,
     title: "Leadership",
-    icon: <Users className="w-5 h-5 text-blue-500" />,
+    icon: <Users className="w-5 h-5 text-white" />,
     description:
       "Ability to guide, motivate, and inspire a team toward achieving common goals.",
   },
   {
     id: 2,
     title: "Responsibility",
-    icon: <CheckCircle className="w-5 h-5 text-green-500" />,
+    icon: <CheckCircle className="w-5 h-5 text-white" />,
     description:
       "Taking ownership of tasks and delivering results with accountability.",
   },
   {
     id: 3,
     title: "Flexibility",
-    icon: <RefreshCw className="w-5 h-5 text-purple-500" />,
+    icon: <RefreshCw className="w-5 h-5 text-white" />,
     description:
       "Adapting to changes quickly and efficiently in different situations.",
   },
@@ -66,7 +66,7 @@ const Skill = () => {
                 {/* Icon wrapper */}
                 <div className="relative flex items-center justify-center h-14 w-14 mt-1">
                   {/* Icon circle */}
-                  <span className="bg-white h-10 w-10 flex items-center justify-center rounded-full   shadow-md z-20">
+                  <span className="bg-primary h-10 w-10 flex items-center justify-center rounded-full   shadow-md z-20">
                     {skill.icon}
                   </span>
                 </div>
