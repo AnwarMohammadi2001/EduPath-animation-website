@@ -188,10 +188,10 @@ export default function EducationCategories() {
       ? filteredCourses.slice(0, visibleCount)
       : filteredCourses;
 
-  // Reset visible count when category changes
+
   const handleCategoryClick = (cat) => {
     setSelectedCategory(cat);
-    setVisibleCount(8); // reset to 8 if user switches back to All Categories
+    setVisibleCount(8); 
   };
 
   return (
