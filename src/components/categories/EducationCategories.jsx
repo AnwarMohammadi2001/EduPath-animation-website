@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import { CourseCard } from "./CourseCard";
+import { motion } from "framer-motion";
+import {
+  contentContainer,
+  contentItem,
+} from "../../utils/framermotion/variants";
 // Example data const
 const coursesData = [
   {
@@ -188,20 +193,25 @@ export default function EducationCategories() {
       ? filteredCourses.slice(0, visibleCount)
       : filteredCourses;
 
-
   const handleCategoryClick = (cat) => {
     setSelectedCategory(cat);
-    setVisibleCount(8); 
+    setVisibleCount(8);
   };
 
   return (
     <div id="category" className="py-20 min-h-screen px-12">
       {/* Category Buttons */}
-      <div className="text-center">
-        <h2 className="text-lg sm:text-2xl lg:text-4xl tracking-normal text-gray-700">
+      <motion.div
+        variants={contentContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.3 }}
+        className="text-center"
+      >
+        <motion.h2 variants={contentItem} className="text-lg sm:text-2xl lg:text-4xl tracking-normal text-gray-700">
           Unlimited access to 100+ instructors.
-        </h2>
-      </div>
+        </motion.h2>
+      </motion.div>
       <div className="flex justify-center gap-3 my-6">
         {categories.map((cat) => (
           <button

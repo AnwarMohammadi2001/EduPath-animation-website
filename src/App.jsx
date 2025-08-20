@@ -5,8 +5,9 @@ import Footer from "./components/Footer";
 import EducationCategories from "./components/categories/EducationCategories";
 import Skill from "./components/Skill";
 import Testimonials from "./components/Testimonials";
+import { motion } from "framer-motion";
 import { FaStar } from "react-icons/fa";
-
+import { contentContainer, contentItem } from "./utils/framermotion/variants";
 const App = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
@@ -16,15 +17,26 @@ const App = () => {
       <Toaster />
       {/* <Navbar theme={theme} setTheme={setTheme} /> */}
       <Hero theme={theme} setTheme={setTheme} />
-      <div className="h-72 bg-primary/90 px-40 grid grid-cols-2">
+      <motion.div
+        variants={contentContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.3 }}
+        className="h-72 bg-primary/90 px-40 grid grid-cols-2"
+      >
         <div className="h-full  text-3xl flex items-center justify-center">
-          <p className="max-w-md text-white">
-            Trusted by over 10,000+ 
-            students worldwide since 2028
-          </p>
+          <motion.p variants={contentItem} className="max-w-md text-white">
+            Trusted by over 10,000+ students worldwide since 2028
+          </motion.p>
         </div>
-        <div className="h-full  text-white flex justify-evenly items-center">
-          <div className="border border-white h-40 w-40 flex flex-col p-3 gap-4">
+        <motion.div
+          variants={contentItem}
+          className="h-full  text-white flex justify-evenly items-center"
+        >
+          <motion.div
+            variants={contentItem}
+            className="border border-white h-40 w-40 flex flex-col p-3 gap-4"
+          >
             <p className="text-5xl">4.8</p>
 
             {/* Five yellow stars */}
@@ -37,17 +49,21 @@ const App = () => {
             </div>
 
             <p className="font-bold">4,300 ratings</p>
-          </div>
-          <div className="border border-white h-40 w-40 flex flex-col p-3 gap-y-4">
+          </motion.div>
+          <motion.div
+            variants={contentItem}
+            className="border border-white h-40 w-40 flex flex-col p-3 gap-y-4"
+          >
             <p className="text-5xl">1.7M</p>
 
             {/* Five yellow stars */}
 
-            <p className="font-bold text-sm">Worldwide products sold oer year.</p>
-           
-          </div>
-        </div>
-      </div>
+            <p className="font-bold text-sm">
+              Worldwide products sold oer year.
+            </p>
+          </motion.div>
+        </motion.div>
+      </motion.div>
       <EducationCategories />
       <Skill />
       <Testimonials />
